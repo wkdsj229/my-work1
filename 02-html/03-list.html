@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>list : html</title>
+</head>
+<body>
+    
+<h1>list</h1>
+
+<h2>1. 비순서 목록</h2>
+
+<ul>
+    <li>
+        강아지
+    <ol>
+        <li>비숑</li>
+        <li>골든리트리버</li>
+    </ol>
+    </li>
+    <li>고양이</li>
+    <li>병아리</li>
+    <li>돼지</li>
+</ul>
+
+<hr>
+<h2>2. 순서 목록</h2>
+
+<ol>
+    <li>떡볶이</li>
+    <li>쌀국수</li>
+    <li>피자</li>
+    <li>양꼬치</li>
+</ol>
+
+<hr>
+<h2>3.네비게이션 구현</h2>
+
+<ul>
+    <li>
+        menu1
+        <ul>
+            <li>
+                menu1-1
+                <ul>
+                    <li>menu1-1-1</li>
+                    <li>menu1-1-2</li>
+                </ul>
+            </li>
+            <li>
+                menu1-2
+                <ul>
+                    <li>menu1-2-1</li>
+                    <li>menu1-2-2</li>
+                </ul>
+            </li>
+            <li>
+                menu1-3
+                <ul>
+                    <li>menu1-3-1</li>
+                    <li>menu1-3-2</li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+    <li>
+        menu2
+        <ul>
+         <li>menu2-1</li>
+         <li>menu2-2</li>
+         <li>menu2-3</li>
+        </ul>
+    </li>
+    <li>
+        menu3
+        <ul>
+            <li>menu3-1</li>
+            <li>menu3-2</li>
+            <li>menu3-3</li>
+        </ul>
+    </li>
+    <li>
+        menu4
+        <ul>
+            <li>menu4-1</li>
+            <li>menu4-2</li>
+            <li>menu4-3</li>
+        </ul>
+    </li>
+   
+</ul>
+
+<hr>
+<!-- nav-depth1 -->
+<ul>
+    <li>
+        <a href="#">menu1</a>
+        <!-- nav-depth2 -->
+        <ul>
+            <li><a href="#">menu1-1</a></li>
+            <li><a href="#">menu1-2</a></li>
+            <li><a href="#">menu1-3</a></li>
+        </ul>
+        <!--// nav-depth2 -->
+    </li>
+    <li>
+        <a href="#">menu2</a>
+        <ul>
+            <li><a href="#">menu2-1</a></li>
+            <li><a href="#">menu2-2</a></li>
+            <li><a href="#">menu2-3</a></li>
+        </ul>
+    </li>
+    <li>
+        <a href="#">menu3</a>
+        <ul>
+            <li><a href="#">menu3-1</a></li>
+            <li><a href="#">menu3-2</a></li>
+            <li><a href="#">menu3-3</a></li>
+        </ul>
+    </li>
+    <li>
+        <a href="#">menu4</a>
+        <ul>
+            <li><a href="#">menu4-1</a></li>
+            <li><a href="#">menu4-2</a></li>
+            <li><a href="#">menu4-3</a></li>
+        </ul>
+    </li>
+</ul>
+
+<hr>
+<ul>
+    <li>
+        <a href="#">메뉴1</a>
+        <ul>
+            <li><a href="#">메뉴1-1</a></li>
+            <li><a href="#">메뉴1-2</a></li>
+            <li><a href="#">메뉴1-3</a></li>
+        </ul>
+    </li>
+    <li> 
+        <a href="#">메뉴2</a>
+        <ul>
+            <li><a href="#">메뉴2-1</a></li>
+            <li><a href="#">메뉴2-2</a></li>
+            <li><a href="#">메뉴2-3</a></li>
+        </ul>
+    </li>
+    <li> 
+        <a href="#">메뉴3</a>
+        <ul>
+           <li><a href="#">메뉴3-1</a></li>
+           <li><a href="#">메뉴3-2</a></li>
+           <li><a href="#">메뉴3-3</a></li>
+        </ul>
+    </li>
+    <li> 
+        <a href="#">메뉴4</a>
+        <ol>
+            <li><a href="#">메뉴4-1</a></li>
+            <li><a href="#">메뉴4-2</a></li>
+            <li><a href="#">메뉴4-3</a></li>
+        </ol>
+    </li>
+</ul>
+
+<hr>
+<h2>4.설명목록</h2>
+<dl>
+    <dt>정의</dt>
+    <dd>설명</dd>
+    <dt>정의1</dt>
+    <dd>설명2</dd>
+    <dd>설명3</dd>
+</dl>
+<di>
+    <dt>정의</dt>
+</di>
+
+
+
+</body>
+</html>

@@ -1,0 +1,635 @@
+@charset "UTF-8";
+@import "reset", "main", "contents", "variable", "mixin";
+
+// comm은 공통클래스들어가는거 넣기
+// 나중에 다른것들(_한 scss) import해서 불러오면됨.
+
+// width 1599px 이상일 경우 
+// 1. layout
+
+.wrap {
+    height: 100vh;
+    padding-left: 250px;
+
+
+    header {
+        display: flex;
+        flex-direction: column;
+        width: 250px;
+        position: fixed;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        background-color: #eee;
+        text-align: center;
+        padding: 40px, 0;
+
+        .logo {
+            margin-bottom: 50px;
+
+            a {
+                background-image: url(../images/marina_bay_sands.png);
+                background-repeat: no-repeat;
+                width: 100%;
+                height: 100px;
+                display: block;
+                background-position: 25px 10px;
+                text-indent: -9999px;
+            }
+
+        }
+
+        #gnb {
+            text-align: left;
+
+            a {
+                display: block;
+                padding: 5px 60px;
+            }
+
+        }
+
+        .nav-goto {
+            margin: auto 0 0;
+
+            .link-goto {
+                display: flex;
+                justify-content: center;
+
+                li:first-child {
+                    a::before {
+                        display: none;
+                    }
+                }
+
+                a {
+                    display: block;
+                    padding: 5px 10px;
+                    position: relative;
+
+                    &:first-child::before {
+                        content: '';
+                        width: 1px;
+                        height: 10px;
+                        background-color: #ccc;
+                        display: block;
+                        position: absolute;
+                        top: 10px;
+                        left: 0;
+
+                    }
+                }
+
+            }
+
+            .link-sns {
+                display: flex;
+                justify-content: center;
+            }
+        }
+
+
+
+
+
+
+    }
+
+    .nav-util {
+        background-color: $b;
+        height: 50px;
+
+    }
+
+    // css 두개 css잡을 수 있는 법 -> #main.containger{} (붙여서 쓰면됨)
+
+    // article 가로 세로 값 변수처리
+    $width : 20%;
+    $heigh : 25%;
+
+
+
+    #main {
+        position: relative;
+        height: calc(100vh - 50px);
+
+
+        article {
+            width: $width;
+            height: $heigh;
+            float: left;
+            position: relative;
+            padding: 20px;
+
+            &::before {
+                /* 모든 article 아래 가상 클라스 만드는거 */
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background-color: $b;
+                opacity: 0.05;
+
+
+            }
+
+
+            &:first-child {
+                background-color: rgba($gray-9, 1);
+                width: $width * 3;
+                height: $heigh*2;
+                background-image: url(../images/book-direct-t.jpg);
+                background-repeat: no-repeat;
+                background-size: cover;
+                transform: translate(0 0);
+                position: relative;
+
+                strong {
+                    color: #fff;
+                    font-size: 5em;
+                    position: absolute;
+                    bottom: 0;
+                    right: 0;
+                }
+            }
+
+            &:nth-child(2) {
+                background-color: rgba($gray-9, 0.9);
+                width: $width * 2;
+                height: $heigh;
+                padding: 15px 30px 0 15px;
+            }
+
+            &:nth-child(3) {
+                position: relative;
+                background-color: rgba($gray-9, 0.8);
+                overflow: hidden;
+
+                i {
+                    font-size: 17vw;
+                    color: $w;
+                    opacity: .7;
+                    position: absolute;
+                    bottom: -3vw;
+                    right: -4vw;
+                    /* 깨지는 곳에서 다시 셋팅값주면됨. */
+                    animation: ani-sync 3s infinite;
+                }
+
+                @keyframes ani-sync {
+                    0% {
+                        transform: rotate(0);
+                    }
+
+                    100% {
+                        transform: rotate(359deg);
+                    }
+
+                }
+            }
+
+            &:nth-child(4) {
+                background-color: rgba($gray-9, 0.7);
+                background-image: url(../images/luxe-suite-savings-t.jpg);
+                background-size: cover;
+                background-repeat: no-repeat;
+            }
+
+            &:nth-child(5) {
+                background-color: rgba($gray-9, 0.6);
+                background-image: url(../images/flexible-rate-t.jpg);
+                background-size: cover;
+                background-repeat: no-repeat;
+
+            }
+
+            &:nth-child(6) {
+                background-color: rgba($gray-9, 0.5);
+                width: $width * 2;
+                height: $heigh;
+            }
+
+            &:nth-child(7) {
+                background-color: rgba($gray-9, 0.45);
+                background-image: url(../images/infinity-pool-1-d.jpg);
+                background-size: cover;
+                background-repeat: no-repeat;
+            }
+
+            &:nth-child(8) {
+                background-color: rgba($gray-9, 0.4);
+            }
+
+            &:nth-child(9) {
+                background-color: rgba($gray-9, 0.3);
+                width: $width * 2;
+                height: $heigh;
+                background-image: url(../images/infinity-pool-2.jpg);
+                background-size: cover;
+                background-repeat: no-repeat;
+            }
+
+            &:nth-child(10) {
+                background-color: rgba($gray-9, 0.35);
+                background-image: url(../images/infinity-pool-3-d.jpg);
+                background-size: cover;
+                background-repeat: no-repeat;
+            }
+
+            &:nth-child(11) {
+                background-color: rgba($gray-9, 0.2);
+            }
+
+            &:last-child {
+                background-color: rgba($gray-9, 0.1);
+                background-image: url(../images/club-55-2-d.jpg);
+                background-size: cover;
+                background-repeat: no-repeat;
+            }
+        }
+    }
+
+
+    // width 1599px 이하일 경우
+    @media screen and (max-width: 1599px) {
+        .wrap {
+            padding-left: 0;
+        }
+
+        header {
+            display: block;
+            position: static;
+            width: 100%;
+            height: 100px;
+
+            .logo {
+                float: left;
+                width: 20%;
+            }
+
+            .nav-goto {
+                display: none;
+            }
+
+            #gnb {
+                float: right;
+
+                li {
+                    float: left;
+
+                    a {
+                        display: block;
+
+                        padding: 35px 30px;
+                    }
+                }
+            }
+        }
+
+
+        #gnb li {
+            a::before {
+                font-family: 'Line Awesome Free';
+                font-weight: 900;
+            }
+
+            &:first-child a::before {
+                content: '\f594';
+            }
+
+            &:nth-child(2) a::before {
+                content: '\f000';
+            }
+
+            &:nth-child(3) a::before {
+                content: '\f0b1';
+            }
+
+            &:last-child a::before {
+                content: ' \f2e7';
+            }
+        }
+
+
+
+        // 변수 선언
+        $height : 250px;
+
+        #main {
+            height: auto;
+
+            article {
+                height: $height;
+
+                &:first-child {
+                    height: $height*2;
+                }
+
+                &:nth-child(2) {
+                    height: $height;
+                }
+
+                &:nth-child(6) {
+                    height: $height;
+                }
+
+                &:nth-child(9) {
+                    height: $height;
+                }
+            }
+        }
+
+    }
+
+    // width 1280px 이하일 경우
+    @media screen and (max-width: 1280px) {
+
+        .logo {
+
+            a {
+                background-size: 70%, auto;
+                height: 100%;
+                transform: translatey(10%);
+            }
+        }
+
+        $width: 25%;
+
+        #main {
+
+
+            article {
+                width: $width;
+
+                &:first-child {
+                    width: $width*3;
+                }
+
+                &:nth-child(2) {
+                    width: $width
+                }
+
+                &:nth-child(6) {
+                    width: $width*2
+                }
+
+                &:nth-child(7) {
+                    width: $width*2
+                }
+
+                &:nth-child(9) {
+                    width: $width
+                }
+
+                &:nth-child(10) {
+                    width: $width*2
+                }
+            }
+        }
+    }
+
+    // width 1023px 이하일 경우
+    @media screen and (max-width: 1023px) {
+
+        header {
+            #gnb li {
+                a {
+                    padding: 30px 15px;
+
+                }
+            }
+        }
+
+        $width: 33.3333%;
+
+        #main {
+
+            article {
+                width: $width;
+
+                &:first-child {
+                    width: $width*3;
+                }
+
+                &:nth-child(2) {
+                    width: $width*2
+                }
+
+                &:nth-child(4) {
+                    display: none;
+                }
+
+                &:nth-child(6) {
+                    width: $width*2
+                }
+
+                &:nth-child(7) {
+                    display: none;
+                }
+
+                &:nth-child(9) {
+                    width: $width
+                }
+
+                &:nth-child(10) {
+                    display: none;
+                }
+
+                &:nth-child(12) {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    // width 779px 이하일 경우
+    @media screen and (max-width:779px) {
+
+        header {
+            #gnb li {
+                a {
+                    padding: 20px 10px;
+
+                    &::before {
+                        display: none;
+                    }
+                }
+
+
+            }
+        }
+
+        $width: 50%;
+
+        #main {
+            article {
+                width: $width;
+
+                &:first-child {
+                    width: $width*2;
+                }
+
+                &:nth-child(2) {
+                    width: $width*2
+                }
+
+                &:nth-child(3) {
+                    display: none;
+                }
+
+                &:nth-child(4) {
+                    display: block;
+                }
+
+                &:nth-child(5) {
+                    display: none;
+                }
+
+                &:nth-child(6) {
+                    width: $width
+                }
+
+                &:nth-child(9) {
+                    width: $width
+                }
+
+                &:nth-child(12) {
+                    display: block;
+                    width: $width;
+                }
+
+            }
+        }
+    }
+
+    // width 639px 이하일 경우
+    @media screen and (max-width: 639px) {
+        header {
+            display: flex;
+            justify-content: space-around;
+
+            #gnb li {
+                a {
+                    padding: 0 10px;
+
+                }
+
+
+            }
+
+            .nav-util {
+                display: none;
+            }
+
+            $heigh:100px;
+
+            #main {
+                article {
+                    height: $heigh;
+
+                    &:first-child {
+                        height: $heigh*2;
+                    }
+
+                    &:nth-child(2) {
+                        background-color: $blue;
+                        height: $heigh;
+
+                        p {
+                            display: none;
+                        }
+                    }
+
+                    &:nth-child(3) {
+                        height: $heigh;
+
+                        p {
+                            display: none;
+                        }
+                    }
+
+                    &:nth-child(6) {
+                        height: $heigh;
+
+                        p {
+                            display: none;
+                        }
+                    }
+
+                    &:nth-child(8) {
+                        height: $heigh;
+
+                        p {
+                            display: none;
+                        }
+                    }
+
+                    &:nth-child(9) {
+                        height: $heigh;
+                    }
+
+                    &:nth-child(11) {
+                        height: $heigh;
+
+                        p {
+                            display: none;
+                        }
+                    }
+
+
+
+                }
+            }
+        }
+    }
+
+        // width 479px 이하일 경우
+        @media screen and (max-width: 479px) {
+            header {
+                display: flex;
+                justify-content: center;
+                text-align: center;
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                z-index: 100;
+                transform: translateY(-60px);
+                height: 100vh;
+                background: none;
+
+                * {
+                    color: $w;
+                    // 글씨는 그 글씨 써있는 태그 잡아야 해서 *로 모든 태그를 잡고 색깔 바꿈
+                }
+
+
+            }
+
+            #main {
+                article {
+                    &:nth-child(n+2) {
+                        display: none;
+                    }
+
+                    &:first-child {
+                        width: 100%;
+                        height: 100vh;
+                        position: fixed;
+                        top: 0;
+                        left: 0;
+                        right: 0;
+
+                        strong {
+                            display: none;
+                        }
+                    }
+                }
+            }
+        }
+
+
+    }

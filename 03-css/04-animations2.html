@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>animation2 : css</title>
+</head>
+<body>
+    
+    <h1>animation</h1>
+
+<div class="wrap">
+    <div class="box1"></div>
+    <div class="box2"></div>
+</div>
+
+<style>
+    .wrap{
+        width: 800px;height: 500px;
+        background-color: #eee;
+        margin: 0 auto;
+        position: relative;
+       
+    }
+
+    .box1{
+        width: 100px;height: 100px;
+        background-color: mediumvioletred;
+        position: absolute;top: 50%;left: -70px;
+        
+        animation-name: box1-ani;
+        animation-duration: 3s;
+        animation-fill-mode: forwards;
+        
+    }
+    .box2{
+        width: 100px;height: 100px;
+        background-color:midnightblue;
+        border-radius: 50%;
+        position: absolute;top: 50%;right: -70px;
+        animation-name: box2-ani;
+        animation-duration: 3s;
+        animation-delay: 0.5s;
+        animation-fill-mode: forwards;
+
+    }
+
+
+    @keyframes box1-ani {
+        0% {top: 30%;left: -70px;transform: rotate(180deg);}
+        100% {top: 40%;left: 320px; opacity: 0.5;transform: rotate(0deg)}
+        
+    }
+
+    @keyframes box2-ani {
+        0% {top: 40%;right: -70px;}
+        100% {top: 50%;right: 320px; opacity: 50%;}
+        
+    }
+   
+</style>
+
+</body>
+</html>

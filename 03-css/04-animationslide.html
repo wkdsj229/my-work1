@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>animation slide : css</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            color: #000;
+            font-size: 14px;
+            line-height: 1.5;
+            box-sizing: border-box;
+            text-decoration: none;
+        }
+    </style>
+
+
+</head>
+
+<body>
+    <h1>animation slide</h1>
+
+    <div class="wrap">
+        <div class="slide">
+            <ul>
+                <li>
+                    <a href="#"><img src="./images/slide1.jpg" alt="딱 일주일만! 오픈기념 15%"></a>
+                </li>
+                <li>
+                    <a href="#"><img src="./images/slide2.jpg" alt="딱 일주일만! 오픈기념 15%"></a>
+                </li>
+                <li>
+                    <a href="#"><img src="./images/slide3.jpg" alt="딱 일주일만! 오픈기념 15%"></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <style>
+        .wrap {
+            background-color: bisque;
+            width: 1200px;
+            height: 800px;
+        }
+
+        .slide {
+            position: relative;
+            width: 1200px;
+            overflow: hidden;
+            height: 305px;
+
+        }
+
+        .slide ul {
+            display: flex;
+            position: absolute;
+            top: 0;
+            left: 0;
+            animation-name: slide-ani;
+            animation-duration: 10s;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+
+        }
+
+        @keyframes slide-ani {
+            0% {top: 0;left: 0;transform:translate(0,0);} /* 슬라이드1 */
+            30% {top: 0;left: 0;transform:translate(0,0);} /* 슬라이드1 멈춤구간 */
+            40% {top: 0;left: -1200px;transform:translate(0,0);} /* 슬라이드1->슬라이드2 이동 */
+            70% {top: 0;left: -1200px;transform:translate(0,0);} /* 슬라이드2 멈춤구간 */
+            80% {top: 0;left: -2400px;transform:translate(0,0);} /* 슬라이드2 -> 슬라이드3 이동 */
+            100% {top: 0;left: -2400px;transform:translate(0,0);} /* 슬라이드3 멈춤구간 */
+        }
+
+    </style>
+
+
+</body>
+
+</html>

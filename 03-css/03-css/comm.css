@@ -1,0 +1,153 @@
+@charset "UTP-8";
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:ital,wght@0,300;1,300&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    color: #000;
+    line-height: 1.5;
+    font-size: 14px;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+}
+
+/* 3.clearfix 처리 */
+.clearfix::after {
+    content: '';
+    clear: both;
+    /* float clear한다는 의미 */
+    display: block;
+}
+
+/* header */
+
+header {
+    height: 100px;
+    /* 1. 높이 값을 엄마에게 넣어준다 */
+    background-color: #eee;
+    text-align: center;
+    padding-top: 20px;
+    /* padding: 20px 0; */
+}
+
+.logo {
+    height: 41px;
+    float: left;
+    background-color: skyblue
+}
+
+nav {
+    background-color: thistle;
+    display: inline-block;
+
+}
+
+
+.nav-depth1 li {
+    float: left;
+}
+
+.nav-depth1 li a {
+    padding: 10px;
+    display: block;
+}
+
+.lang {
+    float: right;
+    height: 41px;
+    background-color: brown;
+}
+
+.lst-lang li {
+    float: left;
+}
+
+.lst-lang li a {
+    display: block;
+}
+
+/* slide */
+
+.container {
+    background-color: wheat;
+    overflow: hidden;
+    
+    /* 2.높이값을 넣을 수 없는 영역에는 overflow: hidden 넣는다. */
+}
+
+.container main {
+    float: left;
+    background-color: tomato;
+    width: 70%;
+    /* overflow: hidden; */
+    /* padding: 20px; */
+}
+
+.lst-main{
+    overflow: hidden;
+}
+
+.lst-main li {
+    float: left;
+    width: 30%; height: 50px;
+    background: rgb(233, 218, 81);
+    border: 1px solid #000;
+    margin-right: 5%;
+}
+
+.lst-main li:nth-child(3n){
+    margin-right: 0;
+}
+
+.lst-main li a {
+      display: block;
+      height: 100%;
+  }
+
+/* bootstrap 정렬 */
+.lst-main2{
+    overflow:hidden;
+    margin:20px -5px 0;
+    
+}
+
+.lst-main2 li{
+    float: left;
+    width: 33.3%; height: 50px;
+    padding: 0 5px;
+    /* background-color:khaki;
+    border: 1px solid #000; */
+}
+
+.lst-main2 li a{
+    display: block;
+    height: 100%;
+    background-color:indianred ;
+    border: 1px solid #000;
+}
+
+.container aside {
+    float: right;
+    background-color: yellowgreen;
+    height: 300px;
+    width: 28%;
+}
+
+/* footer */
+
+footer {
+    background-color: slategrey;
+    text-align: center;
+}
+
+.copyright {
+    display: inline-block;
+    background-color: turquoise;
+}
+
+.sns {
+    float: right;
+    background-color: thistle;
+}
+

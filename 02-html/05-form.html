@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form : html</title>
+</head>
+<body>
+    
+    <h1>html form</h1>
+
+ <form action="" method="get">
+    <fieldset>
+        <legend>회원가입 (form title)</legend>
+
+        <label for="id">아이디</label>
+        <input type="text" name="id" id="id" placeholder="아이디" required autofocus>  <br>
+        <!-- placeholder는 가이드라인(실제 값x) -->
+        <label for="id2">아이디</label>
+        <input type="text" name="id2" id="id2" value="아이디">  <br>
+        <!-- value값은 실제 데이터 값 -->
+
+        <label for="pw">비밀번호</label>
+        <input type="password" name="pw" id="pw" required > <br>
+        
+        <label for="name">이름</label>
+        <input type="text" name="name" id="name" value="김철수" readonly> <br>
+
+        <hr>
+        <!-- input:radio -->
+        <!-- 라디오 버튼은 name값 같게 설정/ id값은 다르게 설정 -->
+        <strong>성별</strong>
+        <input type="radio" name="sex" id="male">
+        <label for="male">남자</label> 
+        <input type="radio" name="sex" id="female">
+        <label for="female">여자</label>  <br>
+
+
+        <strong>직업</strong>
+        <input type="radio" name="job" id="stu">
+        <label for="stu">학생</label>
+        <input type="radio" name="job" id="work">
+        <label for="work">직장인</label> <br>
+
+        <hr>
+        <!-- input:checkbox -->
+        <input type="checkbox" name="termservice" id="termservice">
+        <label for="termservice">이용약관 동의</label>
+        <div style="height:100px; border:1px solid red; overflow-y: scroll;">
+            네이버 서비스 및 제품(이하 ‘서비스’)을 이용해 주셔서 감사합니다. 
+            본 약관은 다양한 네이버 서비스의 이용과 관련하여 네이버 서비스를 제공하는 네이버 주식회사(이하 ‘네이버’)와 
+            이를 이용하는 네이버 서비스 회원(이하 ‘회원’) 또는 비회원과의 관계를 설명하며, 아울러 여러분의 네이버 서비스 이용에 
+            도움이 될 수 있는 유익한 정보를 포함하고 있습니다.
+            네이버 서비스를 이용하시거나 네이버 서비스 회원으로 가입하실 경우 여러분은 본 약관 및 관련 운영 정책을 확인하거나 동의하게 되므로, 잠시 시간을 내시어 주의 깊게 살펴봐 주시기 바랍니다.
+            다양한 네이버 서비스를 즐겨보세요. 네이버는 www.naver.com을 비롯한 네이버 도메인의 웹사이트 및 응용프로그램(어플리케이션, 앱)을 통해 정보 검색, 다른 이용자와의 커뮤니케이션, 
+            콘텐츠 제공, 상품 쇼핑 등 여러분의 생활에 편리함을 더할 수 있는 다양한 서비스를 제공하고 있습니다.
+        </div> <br>
+
+
+        <input type="checkbox" name="termsEmail" id="termsEmail">
+        <label for="termsEmail">프로모션 정보 수신 동의</label>
+        <div style="height: 100px; border: 1px solid red; overflow-y: scroll;">
+            네이버에서 제공하는 이벤트/혜택 등 다양한 정보를 휴대전화(네이버앱 알림 또는 문자), 이메일로 받아보실 수 있습니다. 일부 서비스
+            (별도 회원 체계로 운영하거나 네이버 가입 이후 추가 가입하여 이용하는 서비스 등)의 경우, 개별 서비스에 대해 별도 수신 동의를 받을 수 있으며, 
+            이때에도 수신 동의에 대해 별도로 안내하고 동의를 받습니다.
+        </div> <br>
+
+        <hr>
+        <!-- input:button -->
+        <!-- 서버 정보 변경 할 땐(정보를 서버로 옮길 때) input, button 사용 -->
+        <input type="button" value="수정">
+        <button>수정</button>
+
+        <!-- *a태그도 버튼 만들 수 있지만 페이지 전환으로만 사용됨! -->
+        <a href="#" style="width: 42px;height: 23px;background-color: #ddd; border: 1px solid rgb(129, 125, 125); color: black
+        ; display:inline-block;">수정</a> <br>
+
+        <hr>
+        <!-- email/tel 모바일 자판 레이아웃 변경됨 -->
+        <label for="email">이메일</label>
+        <input type="email" name="email" id="email" disabled> <br>
+        <label for="tel">전화번호</label>
+        <input type="tel" name="tel" id="tel" maxlength="11" placeholder="01012345678"> 
+
+        <hr>
+        <label for="yy">생년월일</label>
+        <input type="text" name="yy" id="yy" size="5" maxlength="4">
+        <select name="mm" id="mm" title="월">
+            <option value="">월</option>
+            <option value="01" selected>01</option>
+            <option value="02">02</option>
+            <option value="03">03</option>
+            <option value="04">04</option>
+            <option value="05">05</option>
+            <option value="06">06</option>
+            <option value="07">07</option>
+            <option value="08">08</option>
+            <option value="09">09</option>
+            <option value="10">10</option>
+            <option value="11">11</option>
+            <option value="12">12</option>  
+        </select>
+
+        <input type="text" name="dd" id="dd" title="일" size="2" maxlength="2">
+    
+        <hr>
+        <label for="join">가입경로</label>
+        <textarea name="join" id="join">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis fuga ex deleniti veritatis adipisci laborum cumque, 
+        nihil dolorum ad inventore, obcaecati illum? Non quos eligendi molestias iusto delectus in perspiciatis.
+        </textarea>  <br><br>
+
+        <label for="file">첨부파일</label>
+        <input type="file" name="file" id="file" multiple>
+       
+
+        <hr>
+
+        <input type="submit" value="회원가입">
+        <input type="reset" value="취소">
+
+    </fieldset>
+
+ </form>
+
+</body>
+</html>

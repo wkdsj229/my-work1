@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>position : css</title>
+</head>
+
+<body>
+
+    <h1>position</h1>
+
+    <br><br>
+    <div class="box5">sticy</div>
+
+    <div class="wrap">
+        <div class="inner">
+            <div class="box1">fixed</div>
+            <div class="box2">fixed-center</div>
+            <div class="box3">absolute</div>
+            <div class="box4">absolue-center</div>
+            <div class="box6"></div>
+        </div>
+
+    </div>
+
+    <style>
+        .wrap {
+            height: 100vh;
+            background-color: thistle;
+            position: relative;
+        }
+
+        /* fixed gnb 만들때 */
+        .box1 {
+            background-color: rgba(135, 207, 235, 0.719);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            /* widows: 100%; */
+            height: 80px;
+        }
+
+        .box2 {
+            background-color: slateblue;
+            color: #fff;
+            width: 30px;
+            height: 100px;
+            position: fixed;
+            top: 50%;
+            right: 0;
+            z-index: 100;
+            margin-top: -50px;
+            writing-mode: vertical-lr;
+            /* 글씨 세로쓰기 */
+        }
+
+        .box3 {
+            width: 100px;
+            height: 100px;
+            background-color: yellowgreen;
+            position: absolute;
+            bottom: 0;
+            right: 0;
+        }
+
+        .box4 {
+            width: 100px;
+            height: 100px;
+            background-color: tomato;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin: -50px 0 0 -50px;
+        }
+
+        .box5{
+            height: 50px;
+            position: sticky;top:0; left: 0;z-index: 200;
+            /* sticky는 인터넷익스플로어 지원 안됨. */
+            background-color:teal ;
+        }
+
+    </style>
+
+    <br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br>
+
+</body>
+
+</html>

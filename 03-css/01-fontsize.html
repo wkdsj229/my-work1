@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fontsize : css</title>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Berkshire+Swash&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            line-height: 1.5;
+            font-size: 12px;
+            box-sizing: border-box;
+            text-decoration: none;
+            color: #000;
+            list-style: none;
+            font-family: 'Berkshire Swash', cursive;
+        }
+    </style>
+
+
+</head>
+
+<body>
+    <h1>fontsize</h1>
+
+    <h2>1.px 단위 (절대값)</h2>
+    <div class="size-1">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dicta ducimus mollitia nemo accusamus
+        reprehenderit placeat aliquid illo facilis debitis, voluptatem iusto inventore, veritatis, perferendis
+        temporibus. Libero saepe sequi at repellendus!</div>
+
+    <!-- <style>
+        .size-1 { font-size: 14px;}
+    </style> -->
+
+    <hr>
+
+    <h2>2. em 단위 (상대값)</h2>
+    <ul>
+        <li>안녕하세요 <strong> 더조은 </strong> 입니다.</li>
+        <li>반갑습니다 <strong> 더조은 컴퓨터 </strong> 에서 공지합니다.</li>
+        <li> <strong> 웹디자인(퍼블리싱) </strong> 오픈합니다.</li>
+    </ul>
+
+    <style>
+        ul li:first-child { font-size: 14px;}
+        ul li:first-child strong { font-size: 28px; }
+
+        /* 기준 폰트 12px (크롬 기준 폰트는 16px)*/
+        ul li:nth-child(2) { font-size: 1.333em; } /* 16px */
+        ul li:nth-child(2) strong {font-size: 2.667em;} /* 32px */
+
+        ul li:last-child{font-size: 2em;}
+        ul li:last-child strong { font-size: 2rem;} 
+
+        /* 자식 em 단위는 부모 기준 */
+        /* rem 단위는 리셋 기준 (부모기준 x)  */
+    </style>
+
+    <hr>
+    <h2>3. vw, vh 단위 (뷰포트 기준)</h2>
+    <div class="size-3">가나다라마바사</div>
+
+    <style>
+        .size-3{
+            background-color: rgb(152, 118, 214);
+            height: 100vh; /* viewport height - 현 디바이스(보여지는 화면에)의 높이값 만큼 꽉채워줘(가로 스크롤이 생겨서 보통 잘 안씀)  */
+            width: 100vw; /* viewprot width - 보여지는 화면에 가로 사이즈 만큼 꽉 채워줘 */
+            font-size: 10vw;
+        }
+        
+    </style>
+
+    <br>
+    <br>
+
+</body>
+
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>display:css</title>
+</head>
+
+<body>
+
+    <h1>display</h1>
+
+    <h2>1. display : inline-block</h2>
+
+        <!-- block : 가로 세로 값을 가질 수 있고 밑으로 떨어짐
+                          기본 가로 100% 값을 가짐 -->
+        <!-- inline : 가로 세로 값을 가질 수 없음. (텍스트라고 생각하면 됨.) 옆으로 붙음 -->
+
+    <ul class="list-display">
+        <li><a href="#">menu1</a></li>
+        <li><a href="#">menu2</a></li>
+        <li><a href="#">menu3</a></li>
+        <li><a href="#">menu4</a></li>
+    </ul>
+
+    <style>
+        .list-display {
+            list-style: none;
+            padding: 0;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .list-display li {
+            display: inline-block;
+            /* float: left; - 스페이스가 안먹는데 이건 가운데 정렬이 안먹음.*/
+            /* inline이 포함되면 텍스트로 생각 */
+
+
+        }
+
+        .list-display a {
+            display: block;
+            width: 100px;
+            height: 50px;
+            background-color: yellowgreen;
+            color: white;
+            text-align: center;
+            line-height: 50px;
+            text-decoration: none;
+
+        }
+    </style>
+
+    <hr>
+    <h2>2. display : none</h2>
+    <!-- 웹접근성에서는 display:none 사용하면 스크린리더가 못읽음..  -->
+
+    <div class="layer">레이어</div>
+
+    <style>
+        .layer {
+            width: 300px;
+            height: 300px;
+            background-color: powderblue;
+            display: block;
+        }
+
+        .layer:hover{
+            background-color: salmon;
+            }
+
+    </style>
+
+</body>
+
+</html>

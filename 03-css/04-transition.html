@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>transition : css</title>
+</head>
+
+<body>
+
+    <h1>transition</h1>
+
+    <div class="wrap">
+        <div class="t1">1</div>
+        <div class="t2">2</div>
+        <div class="t3">3</div>
+
+    </div>
+
+    <style>
+        .wrap {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            background-color: darkorange;
+            height: 400px;
+            width: 1200px;
+            transform: scale(0.7);
+            transform-origin: 0 0;
+            overflow: hidden;
+        }
+
+        .wrap>div {
+            width: 300px;
+            height: 300px;
+            text-align: center;
+            line-height: 300px;
+            background-color: blueviolet;
+            color: #fff;
+            font-size: 3em;
+            transition: all 1s;
+        }
+
+        .t1 {
+            transform: translateY(400px);
+            opacity: 0;
+          
+        }
+
+        .t2 {
+            transform: translateY(-400px) rotate(180deg);
+            opacity: 0;
+        }
+
+        .t3 {
+            transform: translateX(400px);
+            opacity: 0;
+        }
+
+
+        .wrap:hover div {
+            transform: translate(0, 0);
+            opacity: 1;
+        }
+
+        .wrap:hover .t2 {
+            transform: rotate(0deg);
+            transition-delay: 0.2s;
+        }
+
+        .wrap:hover .t3 {
+            transition-delay: 0.5s;
+        }
+    </style>
+
+</body>
+
+</html>

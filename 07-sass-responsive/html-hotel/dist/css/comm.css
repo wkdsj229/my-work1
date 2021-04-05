@@ -1,0 +1,702 @@
+@charset "UTF-8";
+/* reset */
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, textarea, p, blockquote, th, td, input, select, textarea, button, article, section {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+fieldset, img {
+  border: 0 none;
+}
+
+dl, ul, ol, menu, li {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after, q:before, q:after {
+  content: '';
+  content: none;
+}
+
+input, select, textarea, button {
+  font-size: 100%;
+  vertical-align: middle;
+}
+
+button {
+  border: 0 none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+body {
+  -webkit-text-size-adjust: none;
+}
+
+/* 뷰표트 변환시 폰트크기 자동확대 방지 */
+input[type='text'], input[type='password'], input[type='submit'], input[type='search'] {
+  -webkit-appearance: none;
+  border-radius: 0;
+}
+
+input:checked[type='checkbox'] {
+  background-color: #666;
+  -webkit-appearance: checkbox;
+}
+
+button, input[type='button'], input[type='submit'], input[type='reset'], input[type='file'] {
+  -webkit-appearance: button;
+  border-radius: 0;
+}
+
+input[type='search']::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+}
+
+body {
+  background: #fff;
+}
+
+/* 기본 폰트 설정 */
+body, th, td, input, select, textarea, button {
+  font-size: calc(14px + 0.1vw);
+  line-height: 1.5;
+  font-family: 'Open Sans Condensed','Malgun Gothic', '맑은 고딕', sans-serif;
+  color: #333;
+}
+
+/* color값은 디자인가이드에 맞게사용 */
+a {
+  color: #333;
+  text-decoration: none;
+}
+
+a:active, a:hover {
+  text-decoration: none;
+}
+
+address, caption, cite, code, dfn, em, var {
+  font-style: normal;
+  font-weight: normal;
+}
+
+address, caption, cite, code, dfn, em, var {
+  font-style: normal;
+  font-weight: normal;
+}
+
+hr {
+  display: none;
+}
+
+input[type=password] {
+  font-family: 'Malgun Gothic';
+}
+
+/* skipnavigation */
+#u-skip a {
+  position: absolute;
+  left: -3000%;
+}
+
+#u-skip a:focus {
+  display: block;
+  left: 0;
+  top: 0;
+  z-index: 10000000000;
+  width: 100%;
+  height: 30px;
+  line-height: 30px;
+  background: #0072bc;
+  color: #fff;
+  text-align: center;
+}
+
+/* 이미지 스프라이트 */
+.img_g {
+  display: inline-block;
+  overflow: hidden;
+  background: url(../../images/comm/img-comm.png) no-repeat;
+  vertical-align: top;
+}
+
+/* 이미지 */
+/* global */
+.ir_pm {
+  display: block;
+  overflow: hidden;
+  font-size: 0px;
+  line-height: 0;
+  text-indent: -9999px;
+}
+
+/* 사용된 이미지내 의미있는 텍스트의 대체텍스트를 제공할때 */
+.ir_wa {
+  display: block;
+  overflow: hidden;
+  position: relative;
+  z-index: -10;
+  width: 100%;
+  height: 100%;
+}
+
+/* 중요한 이미지 대체텍스트로 이미지off시에도 대체 텍스트를 보여주고자 할때 */
+.blind, caption, legend {
+  overflow: hidden;
+  position: absolute;
+  width: 0;
+  height: 0;
+  line-height: 0;
+  text-indent: -9999px;
+}
+
+/* 대체텍스트가 아닌 접근성을 위한 숨김텍스트를 제공할때 */
+.f_l {
+  float: left;
+}
+
+.f_r {
+  float: right;
+}
+
+.show {
+  display: block;
+}
+
+.hide {
+  display: none;
+}
+
+.tbl {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* 테이블 초기화 */
+.clear_g {
+  display: block;
+  overflow: visible;
+  width: auto;
+  clear: both;
+  *zoom: 1;
+}
+
+.clear_g:after {
+  display: block;
+  visibility: hidden;
+  height: 0;
+  font-size: 0;
+  clear: both;
+  content: '';
+}
+
+.wrap {
+  height: 100vh;
+  padding-left: 250px;
+}
+
+.wrap header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 250px;
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  background-color: #eee;
+  text-align: center;
+  padding: 40px, 0;
+}
+
+.wrap header .logo {
+  margin-bottom: 50px;
+}
+
+.wrap header .logo a {
+  background-image: url(../images/marina_bay_sands.png);
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100px;
+  display: block;
+  background-position: 25px 10px;
+  text-indent: -9999px;
+}
+
+.wrap header #gnb {
+  text-align: left;
+}
+
+.wrap header #gnb a {
+  display: block;
+  padding: 5px 60px;
+}
+
+.wrap header .nav-goto {
+  margin: auto 0 0;
+}
+
+.wrap header .nav-goto .link-goto {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.wrap header .nav-goto .link-goto li:first-child a::before {
+  display: none;
+}
+
+.wrap header .nav-goto .link-goto a {
+  display: block;
+  padding: 5px 10px;
+  position: relative;
+}
+
+.wrap header .nav-goto .link-goto a:first-child::before {
+  content: '';
+  width: 1px;
+  height: 10px;
+  background-color: #ccc;
+  display: block;
+  position: absolute;
+  top: 10px;
+  left: 0;
+}
+
+.wrap header .nav-goto .link-sns {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.wrap .nav-util {
+  background-color: #000;
+  height: 50px;
+}
+
+.wrap #main {
+  position: relative;
+  height: calc(100vh - 50px);
+}
+
+.wrap #main article {
+  width: 20%;
+  height: 25%;
+  float: left;
+  position: relative;
+  padding: 20px;
+}
+
+.wrap #main article::before {
+  /* 모든 article 아래 가상 클라스 만드는거 */
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #000;
+  opacity: 0.05;
+}
+
+.wrap #main article:first-child {
+  background-color: #999999;
+  width: 60%;
+  height: 50%;
+  background-image: url(../images/book-direct-t.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  -webkit-transform: translate(0 0);
+          transform: translate(0 0);
+  position: relative;
+}
+
+.wrap #main article:first-child strong {
+  color: #fff;
+  font-size: 5em;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+.wrap #main article:nth-child(2) {
+  background-color: rgba(153, 153, 153, 0.9);
+  width: 40%;
+  height: 25%;
+  padding: 15px 30px 0 15px;
+}
+
+.wrap #main article:nth-child(3) {
+  position: relative;
+  background-color: rgba(153, 153, 153, 0.8);
+  overflow: hidden;
+}
+
+.wrap #main article:nth-child(3) i {
+  font-size: 17vw;
+  color: #fff;
+  opacity: .7;
+  position: absolute;
+  bottom: -3vw;
+  right: -4vw;
+  /* 깨지는 곳에서 다시 셋팅값주면됨. */
+  -webkit-animation: ani-sync 3s infinite;
+          animation: ani-sync 3s infinite;
+}
+
+@-webkit-keyframes ani-sync {
+  0% {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+  }
+  100% {
+    -webkit-transform: rotate(359deg);
+            transform: rotate(359deg);
+  }
+}
+
+@keyframes ani-sync {
+  0% {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+  }
+  100% {
+    -webkit-transform: rotate(359deg);
+            transform: rotate(359deg);
+  }
+}
+
+.wrap #main article:nth-child(4) {
+  background-color: rgba(153, 153, 153, 0.7);
+  background-image: url(../images/luxe-suite-savings-t.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.wrap #main article:nth-child(5) {
+  background-color: rgba(153, 153, 153, 0.6);
+  background-image: url(../images/flexible-rate-t.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.wrap #main article:nth-child(6) {
+  background-color: rgba(153, 153, 153, 0.5);
+  width: 40%;
+  height: 25%;
+}
+
+.wrap #main article:nth-child(7) {
+  background-color: rgba(153, 153, 153, 0.45);
+  background-image: url(../images/infinity-pool-1-d.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.wrap #main article:nth-child(8) {
+  background-color: rgba(153, 153, 153, 0.4);
+}
+
+.wrap #main article:nth-child(9) {
+  background-color: rgba(153, 153, 153, 0.3);
+  width: 40%;
+  height: 25%;
+  background-image: url(../images/infinity-pool-2.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.wrap #main article:nth-child(10) {
+  background-color: rgba(153, 153, 153, 0.35);
+  background-image: url(../images/infinity-pool-3-d.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.wrap #main article:nth-child(11) {
+  background-color: rgba(153, 153, 153, 0.2);
+}
+
+.wrap #main article:last-child {
+  background-color: rgba(153, 153, 153, 0.1);
+  background-image: url(../images/club-55-2-d.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+@media screen and (max-width: 1599px) {
+  .wrap .wrap {
+    padding-left: 0;
+  }
+  .wrap header {
+    display: block;
+    position: static;
+    width: 100%;
+    height: 100px;
+  }
+  .wrap header .logo {
+    float: left;
+    width: 20%;
+  }
+  .wrap header .nav-goto {
+    display: none;
+  }
+  .wrap header #gnb {
+    float: right;
+  }
+  .wrap header #gnb li {
+    float: left;
+  }
+  .wrap header #gnb li a {
+    display: block;
+    padding: 35px 30px;
+  }
+  .wrap #gnb li a::before {
+    font-family: 'Line Awesome Free';
+    font-weight: 900;
+  }
+  .wrap #gnb li:first-child a::before {
+    content: '\f594';
+  }
+  .wrap #gnb li:nth-child(2) a::before {
+    content: '\f000';
+  }
+  .wrap #gnb li:nth-child(3) a::before {
+    content: '\f0b1';
+  }
+  .wrap #gnb li:last-child a::before {
+    content: ' \f2e7';
+  }
+  .wrap #main {
+    height: auto;
+  }
+  .wrap #main article {
+    height: 250px;
+  }
+  .wrap #main article:first-child {
+    height: 500px;
+  }
+  .wrap #main article:nth-child(2) {
+    height: 250px;
+  }
+  .wrap #main article:nth-child(6) {
+    height: 250px;
+  }
+  .wrap #main article:nth-child(9) {
+    height: 250px;
+  }
+}
+
+@media screen and (max-width: 1280px) {
+  .wrap .logo a {
+    background-size: 70%, auto;
+    height: 100%;
+    -webkit-transform: translatey(10%);
+            transform: translatey(10%);
+  }
+  .wrap #main article {
+    width: 25%;
+  }
+  .wrap #main article:first-child {
+    width: 75%;
+  }
+  .wrap #main article:nth-child(2) {
+    width: 25%;
+  }
+  .wrap #main article:nth-child(6) {
+    width: 50%;
+  }
+  .wrap #main article:nth-child(7) {
+    width: 50%;
+  }
+  .wrap #main article:nth-child(9) {
+    width: 25%;
+  }
+  .wrap #main article:nth-child(10) {
+    width: 50%;
+  }
+}
+
+@media screen and (max-width: 1023px) {
+  .wrap header #gnb li a {
+    padding: 30px 15px;
+  }
+  .wrap #main article {
+    width: 33.3333%;
+  }
+  .wrap #main article:first-child {
+    width: 99.9999%;
+  }
+  .wrap #main article:nth-child(2) {
+    width: 66.6666%;
+  }
+  .wrap #main article:nth-child(4) {
+    display: none;
+  }
+  .wrap #main article:nth-child(6) {
+    width: 66.6666%;
+  }
+  .wrap #main article:nth-child(7) {
+    display: none;
+  }
+  .wrap #main article:nth-child(9) {
+    width: 33.3333%;
+  }
+  .wrap #main article:nth-child(10) {
+    display: none;
+  }
+  .wrap #main article:nth-child(12) {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 779px) {
+  .wrap header #gnb li a {
+    padding: 20px 10px;
+  }
+  .wrap header #gnb li a::before {
+    display: none;
+  }
+  .wrap #main article {
+    width: 50%;
+  }
+  .wrap #main article:first-child {
+    width: 100%;
+  }
+  .wrap #main article:nth-child(2) {
+    width: 100%;
+  }
+  .wrap #main article:nth-child(3) {
+    display: none;
+  }
+  .wrap #main article:nth-child(4) {
+    display: block;
+  }
+  .wrap #main article:nth-child(5) {
+    display: none;
+  }
+  .wrap #main article:nth-child(6) {
+    width: 50%;
+  }
+  .wrap #main article:nth-child(9) {
+    width: 50%;
+  }
+  .wrap #main article:nth-child(12) {
+    display: block;
+    width: 50%;
+  }
+}
+
+@media screen and (max-width: 639px) {
+  .wrap header {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+  }
+  .wrap .nav-util {
+    display: none;
+  }
+  .wrap #main article {
+    height: 100px;
+  }
+  .wrap #main article:first-child {
+    height: 200px;
+  }
+  .wrap #main article:nth-child(2) {
+    background-color: skyblue;
+    height: 100px;
+  }
+  .wrap #main article:nth-child(2) p {
+    display: none;
+  }
+  .wrap #main article:nth-child(3) {
+    height: 100px;
+  }
+  .wrap #main article:nth-child(3) p {
+    display: none;
+  }
+  .wrap #main article:nth-child(6) {
+    height: 100px;
+  }
+  .wrap #main article:nth-child(6) p {
+    display: none;
+  }
+  .wrap #main article:nth-child(8) {
+    height: 100px;
+  }
+  .wrap #main article:nth-child(8) p {
+    display: none;
+  }
+  .wrap #main article:nth-child(9) {
+    height: 100px;
+  }
+  .wrap #main article:nth-child(11) {
+    height: 100px;
+  }
+  .wrap #main article:nth-child(11) p {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 479px) {
+  .wrap header {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    text-align: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 100;
+    -webkit-transform: translateY(-60px);
+            transform: translateY(-60px);
+    height: 100vh;
+    background: none;
+  }
+  .wrap header * {
+    color: #fff;
+  }
+  .wrap #main article:nth-child(n+2) {
+    display: none;
+  }
+  .wrap #main article:first-child {
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+  }
+  .wrap #main article:first-child strong {
+    display: none;
+  }
+}
+/*# sourceMappingURL=comm.css.map */

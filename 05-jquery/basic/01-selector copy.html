@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>선택자 : jquery</title>
+    <script src="./dist/js/jquery-3.6.0.min.js"></script>
+    <script src="./dist/js/comm.js"></script>  <!-- 두개 순서 중요!  -->
+</head>
+<body>
+    <h1>선택자</h1>
+
+    <h2>1. css 방식으로 선택</h2>
+    
+    <script>
+        // 페이지가 로딩된 후 스크립트 실행해줘(준비 이벤트)
+        $(function(){
+            $('nav').css({
+                border : '1px solid red',
+                background : 'yellow'
+            })
+
+            $('.nav-depth1').css({
+                display : 'flex'
+               
+            })
+        })
+    </script>
+
+    <nav>
+        <ul class="nav-depth1">
+            <li>menu1</li>
+            <li>menu2</li>
+            <li>menu3</li>
+            <li>menu4</li>
+        </ul>
+    </nav>
+
+    <hr>
+    <h2>조상, 부모 선택</h2>
+
+    <script>
+        $(function(){
+            $('#wrap span').parent().css({
+                border : '1px solid red'
+            })
+
+            $('#wrap a').parents('ul').css({
+                border : '1px solid blue'
+            })
+        })
+    </script>
+
+    <div id="wrap">
+        조상
+        <ul>
+            조부모(조상)
+            <li>
+                부모 (조상)
+                <span>나(this)</span>
+            </li>
+            <li>
+                부모
+                <a href="#">나(this)</a>
+            </li>
+        </ul>
+    </div>
+   
+    <hr>
+    <h2>자식선택</h2>
+
+    <script>
+        $(function(){
+            $('#children').children().css({
+                border : '1px solid aqua'
+            })
+
+            $('#children').find('span').css({
+                background : 'orange'
+            })
+        })
+    </script>
+
+    <div id="children">
+        나(this)
+        <ul>
+            자식
+            <li>
+                자손
+                <span>자손</span>
+            </li>
+            <li>
+                자손
+                <a href="#">자손</a>
+            </li>
+        </ul>
+    </div>
+    
+    <hr>
+    <h2>필터링(선택된 요소 중...)</h2>
+
+    <script>
+        $(function(){
+            $('.list li').eq(2).css({ /* eq는 0부터 시작 ->2는 3번째 아이 잡은거 */
+                background : 'tomato'
+            })
+            $('.list li').filter('.on').css({
+                border : '1px solid blue'
+            })
+        })
+    </script>
+
+    <ul class="list">
+        <li>menu1</li>
+        <li class="on">menu2</li> <!-- indigo -->
+        <li>menu3</li>
+        <li>menu4</li>
+    </ul>
+    
+
+
+
+    <br><br><br><br><br><br><br><br><br>
+</body>
+</html>
