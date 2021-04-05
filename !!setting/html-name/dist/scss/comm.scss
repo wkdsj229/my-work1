@@ -1,0 +1,366 @@
+@charset "UTF-8";
+@import "reset";
+
+// css로 컴파일 되지 않는 주석
+/* css로 컴파일 되는 주석 */
+
+// 공통class
+
+.sec-g {
+    overflow: hidden;
+
+    .container {
+        padding: 100px 0;
+        text-align: center;
+    }
+}
+
+.sec-tit {
+    margin-bottom: 30px;
+    font-size: 30px;
+    font-weight: 500;
+    color: #000;
+    line-height: 1.2em;
+    letter-spacing: -0.03em;
+}
+
+.txt-left {
+    text-align: left;
+}
+
+.wrap {
+    position: relative;
+
+}
+
+
+#header {
+    justify-content: space-between;
+    padding: 0;
+
+
+    // background-color: aquamarine !important;
+    &.sticky {
+        background-color: #fff;
+        border-bottom: 1px solid #eee;
+
+        * {
+            color: #000 !important;
+        }
+
+    }
+
+    .container {
+        .logo {
+            margin-bottom: 0;
+
+            a {
+                color: #fff;
+
+            }
+        }
+    }
+
+
+
+    // #collapsibleNavbar.show{
+    //     // .show가 붙은 애한테만 적용시킨것.
+    //     position: fixed;top: 56px ;left: 0;right: 0;
+    //     height: 100vh;
+    //     background-color: aquamarine;
+    // }
+}
+
+#collapsibleNavbar {
+
+    .nav-link {
+
+        // color: yellow;
+        &.active {
+            color: aqua;
+        }
+    }
+}
+
+
+
+// 네비게이션
+// 
+#gnb {
+    text-align: center;
+
+    &.active {
+        .nav-bg {
+            height: 160px;
+            border-top: 1px solid #eee;
+            border-bottom: 1px solid #eee;
+        }
+
+        .nav-depth2 {
+            height: 160px;
+
+        }
+
+
+    }
+
+    .nav-depth1>li {
+        position: relative;
+
+        &:hover,
+        &:focus {
+            border-bottom: 2px solid tomato;
+        }
+
+        >a {
+            padding: 0 20px;
+            display: block;
+            height: 55px;
+            line-height: 55px;
+
+        }
+    }
+
+    .nav-depth2 {
+        height: 0;
+        position: absolute;
+        overflow: hidden;
+        top: 65px;
+        left: 0;
+        right: 0;
+        transition: all 0.5s;
+
+        li>a {
+            display: block;
+            color: #000;
+            padding: 5px 0;
+
+            &:hover,
+            &:focus {
+                color: tomato !important;
+            }
+        }
+    }
+
+    .nav-bg {
+        background-color: #fff;
+        height: 0;
+
+        position: absolute;
+        top: 55px;
+        left: 0;
+        right: 0;
+        transition: all 0.5s;
+
+    }
+
+
+
+}
+
+
+
+
+.ani-slide1 {
+    .swiper-slide {
+        position: relative;
+
+        img {
+            width: 100%;
+            height: 100vh;
+            object-fit: cover;
+        }
+
+
+
+        .slide-txt {
+            width: 100%;
+            font-size: 2rem;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, 60%);
+            transition: all .7s;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, .1);
+            color: #fff;
+            opacity: 0;
+        }
+    }
+
+    .swiper-slide-active {
+        .slide-txt {
+            transform: translate(-50%, -50%);
+            opacity: 1;
+        }
+    }
+
+    @media screen and (min-width: 576px) {
+        .slide-txt {
+            max-width: 540px;
+        }
+    }
+
+    @media screen and (min-width: 768px) {
+        .slide-txt {
+            max-width: 720px;
+        }
+    }
+
+    @media screen and (min-width: 992px) {
+        .slide-txt {
+            max-width: 960px;
+        }
+    }
+
+    @media screen and (min-width: 1200px) {
+        .slide-txt {
+            max-width: 1140px;
+        }
+    }
+
+
+
+
+
+}
+
+.sec-2 {
+    background: #eee;
+}
+
+footer {
+    height: 100px;
+    padding: 100px, 0;
+    background: #444;
+}
+
+// html에는 안나오지만 스크립트로 만들어놔서 css로 넣을 수 있음.
+#scrollUp {
+    bottom: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    background-color: #555;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-size: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-family: 'Line Awesome Free';
+    font-weight: 900;
+
+    &::before {
+        content: "\f106";
+        display: block;
+        font-size: 2rem;
+    }
+}
+
+// ani-slide
+.ani-slide {
+    transform: translateY(60px);
+    /* 밑에 내려가 있어야 올라올 수 있음 */
+    visibility: hidden;
+    /* 안보이게 설정 */
+
+    &.ani-top {
+        visibility: visible;
+        animation: objectslide 1s forwards;
+    }
+
+    @keyframes objectslide {
+        0% {
+            transform: translateY(60px);
+            opacity: 0;
+        }
+
+        100% {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+}
+
+
+.ani-slide2 {
+    overflow: visible;
+    margin-bottom: 200px;
+
+    .swiper-slide {
+
+        height: 300px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #fff;
+    }
+
+
+    .swiper-button-next {
+        right: -70px;
+    }
+
+    .swiper-button-prev {
+        left: -70px;
+    }
+
+    .swiper-pagination-bullets {
+        bottom: -40px;
+    }
+}
+
+
+.ani-slide3 {
+    position: relative;
+
+
+    .swiper-slide {
+        height: 300px;
+        border-radius: 10%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #fff;
+        // overflow: hidden;
+
+    }
+
+    .swiper-button {
+        font-family: 'Line Awesome Free';
+        font-weight: 900;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+
+        &::after {
+            display: none;
+        }
+
+        &::before {
+            display: block;
+            font-size: 3rem;
+        }
+    }
+
+    .swiper-button-next-out {
+        right: -50px;
+
+        &::before {
+            content: '\f061';
+        }
+    }
+
+    .swiper-button-prev-out {
+        left: -50px;
+
+        &::before {
+            content: '\f060';
+        }
+    }
+
+    .swiper-pagination-bullets {
+        bottom: -5px;
+    }
+}
